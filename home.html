@@ -1,52 +1,70 @@
 <!DOCTYPE html>
-<html lang="PT-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HOME</title>
+    <title>Aplication Kitchen</title>
     <link rel="stylesheet" href="CSS/home.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1></h1>
-            <nav>
-                <ul>
-                    <li><a href="#">Início</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </nav>
-            <div class="profile">
-                <input type="text" id="searchInput" placeholder="Pesquisar...">
-                <div class="profile-info">
-                    <img src="img/user-png-icon-user-2-icon-png-file-512x512-pixel-512.png" alt="Imagem de Perfil">
-                    <span>Nome do Usuário</span>
-                </div>
-            </div>
-        </div>
-    </header>
-    <section class="content">
-        <div class="container">
-            <div class="carousel">
-                <div class="carousel-slide" id="carouselSlide">
-                    <img src="img/Cadastro Compras.png" alt="Imagem 1">
-                    <img src="img/Cadastro Refeições Servidas.png" alt="Imagem 2">
-                    <img src="img/Manutenção Cozinha (1).png" alt="Imagem 3">
-                    <img src="img/Relátorios.png" alt="Imagem 4">
-                </div>
-                <button class="carousel-btn prev-btn" onclick="changeSlide(-1)">&#10094;</button>
-                <button class="carousel-btn next-btn" onclick="changeSlide(1)">&#10095;</button>
-                <div class="carousel-options" id="carouselOptions">
-                    <span class="carousel-option" onclick="currentSlide(1)"></span>
-                    <span class="carousel-option" onclick="currentSlide(2)"></span>
-                    <span class="carousel-option" onclick="currentSlide(3)"></span>
-                    <span class="carousel-option" onclick="currentSlide(4)"></span>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <script src="home.js"></script>
+<!-- Barra de navegação -->
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-logo"><img src="img/Logo Reciclar - Negativo.png" width="205px" height="86px"></div>
+        <div class="navbar-menu" id="navbarMenu">
+            <ul class="navbar-nav">
+                <li><a href="cadastro.html" onclick="navigateTo('cadastrar-compras')">Cadastrar Compras</a></li>
+                <li><a href="#" onclick="navigateTo('cadastro-refeicoes')">Cadastro de Refeições</a></li>
+                <li><a href="#" onclick="navigateTo('manutencao-cozinha')">Manutenção Cozinha</a></li>
+                <li><a href="#" onclick="navigateTo('relatorios')">Relatórios</a></li>
+                <li><a href="#" onclick="navigateTo('retiradas')">Retiradas</a></li>
+            </ul>
+        </div>
+        <div class="navbar-user">
+            <input type="text" placeholder="Pesquisar...">
+            <a href="#" class="user-menu" onclick="toggleUserMenu()"><img src="img/user-png-icon-user-2-icon-png-file-512x512-pixel-512.png" id="img-user"/></a>
+        </div>
+        <div class="hamburger-menu" onclick="toggleMenu()">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+    </div>
+</nav>
+
+<!-- Conteúdo principal -->
+<!-- <main class="content">
+    <h1>Bem-vindo à Página Inicial</h1>
+    <p>Aqui você pode navegar para diferentes funcionalidades:</p>
+    <div class="buttons">
+        <button onclick="navigateTo('cadastrar-compras')">Cadastrar Compras</button>
+        <button onclick="navigateTo('cadastro-refeicoes')">Cadastro de Refeições</button>
+        <button onclick="navigateTo('manutencao-cozinha')">Manutenção Cozinha</button>
+        <button onclick="navigateTo('relatorios')">Relatórios</button>
+    </div>
+</main> -->
+
+<!-- Script para o menu hamburguer e menu de usuário -->
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById('navbarMenu');
+        menu.classList.toggle('active');
+    }
+
+    function toggleUserMenu() {
+        var userMenu = document.querySelector('.user-menu');
+        // Exemplo simples de alternância do menu do usuário
+        alert('Aqui você poderia implementar a lógica para o menu do usuário');
+    }
+
+    function navigateTo(page) {
+        // Simplesmente alertando para demonstrar a navegação
+        alert('Você está navegando para: ' + page);
+        // Aqui você pode redirecionar para a página desejada utilizando window.location.href
+        // Exemplo: window.location.href = 'https://seusite.com/' + page;
+    }
+</script>
+
 </body>
 </html>

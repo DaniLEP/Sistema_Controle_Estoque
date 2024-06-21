@@ -1,149 +1,127 @@
-/* Estilos básicos */
-
+/* Estilos gerais */
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     font-family: Arial, sans-serif;
-    line-height: 1.6;
+    background-color: #f0f0f0;
 }
 
 .container {
-    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header {
+.navbar {
     background-color: #333;
-    color: #fff;
+    color: white;
     padding: 10px 0;
 }
 
-header h1 {
-    font-size: 1.8rem;
-    margin: 0;
-    float: left;
+.navbar-logo {
+    position: relative;
+    width: 205px;
+    height: 86px;
 }
 
-nav ul {
+
+.navbar-nav {
     list-style-type: none;
-    float: left;
-    margin-top: 10px;
 }
 
-nav ul li {
-    display: inline;
+.navbar-nav li {
+    display: inline-block;
     margin-right: 20px;
 }
 
-nav ul li a {
-    color: #fff;
+.navbar-nav li a {
     text-decoration: none;
-    font-size: 1.2rem;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-.profile {
-    float: right;
-    margin-top: 10px;
-}
-
-.profile input[type="text"] {
-    padding: 6px;
-    border-radius: 4px;
-    border: 1px solid #ccc;
-    margin-right: 10px;
-    font-size: 1rem;
-}
-
-.profile-info {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 10px;
-}
-
-.profile-info img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    vertical-align: middle;
-}
-
-.profile-info span {
-    margin-left: 5px;
-    font-size: 1.2rem;
-    vertical-align: middle;
-}
-
-.content {
-    margin-top: 20px;
-}
-
-.carousel {
-    position: relative;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.carousel-slide {
-    display: flex;
-}
-
-.carousel-slide img {
-    width: 100%;
-    display: none;
-}
-
-.carousel-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.3);
-    color: #fff;
-    border: none;
-    cursor: pointer;
+    color: white;
     padding: 10px;
-    font-size: 1.2rem;
     transition: background-color 0.3s ease;
 }
 
-.carousel-btn:hover {
-    background-color: rgba(0, 0, 0, 0.5);
+.navbar-nav li a:hover {
+    background-color: #555;
 }
 
-.prev-btn {
-    left: 10px;
+.navbar-user {
+    display: flex;
+    align-items: center;
 }
 
-.next-btn {
-    right: 10px;
+.navbar-user input[type="text"] {
+    padding: 8px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
 }
 
-.carousel-options {
-    text-align: center;
-    margin-top: 10px;
+.user-menu {
+    background-color: #FFFFFF;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 50px;
+    text-decoration: none;
 }
 
-.carousel-option {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background-color: #aaa;
-    border-radius: 50%;
-    margin: 0 5px;
+.user-menu:hover {
+    background-color: #777;
+}
+
+#img-user{
+    width: 46px;
+    height: 46px;
+}
+/* Menu Hamburger */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
     cursor: pointer;
 }
 
-.carousel-option.active {
-    background-color: #333;
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger-menu {
+        display: flex;
+    }
+    
+    .navbar-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        z-index: 1000;
+    }
+
+    .navbar-menu.active {
+        display: block;
+    }
+
+    .navbar-nav {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .navbar-nav li {
+        display: block;
+        margin: 10px 0;
+    }
 }
