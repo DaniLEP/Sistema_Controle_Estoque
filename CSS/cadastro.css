@@ -46,5 +46,26 @@ h1 {
     transform: translateY(-5px);
 }
 
+button {
+    padding: 10px 20px;
+    margin-right: -90%;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  
+#voltar{
+    text-decoration: none;
+    color: #ffff
+    ;
+  }
+
+#return{
+    width: 112px;
+}
 
 
