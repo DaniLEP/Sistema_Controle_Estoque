@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatório Mensal/Anual</title>
+  <link rel="stylesheet" href="CSS/anual.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Relatório Mensal/Anual</h1>
+    <div class="search-form">
+      <label for="skuInput">Consultar por SKU:</label>
+      <input type="text" id="skuInput" placeholder="Digite o SKU">
+      <button onclick="consultarPorSKU()">Consultar</button>
+    </div>
+    <div id="relatorio">
+      <!-- Aqui serão inseridos dinamicamente os dados do relatório -->
+    </div>
+    <div class="buttons">
+      <button type="button" onclick="voltar()"><a href="relatorios.html" id="voltar">Voltar</a></button>
+      <button onclick="salvarExcel()">Salvar Excel</button>
+      <button onclick="salvarPDF()">Salvar PDF</button>
+    </div>
+  </div>
+
+  <script src="JS/mensal.js"></script>
+</body>
+</html>

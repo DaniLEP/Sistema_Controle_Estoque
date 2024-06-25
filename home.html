@@ -15,15 +15,14 @@
         <div class="navbar-menu" id="navbarMenu">
             <ul class="navbar-nav">
                 <li><a href="cadastro.html" onclick="navigateTo('cadastrar-compras')">Cadastrar Compras</a></li>
-                <li><a href="#" onclick="navigateTo('cadastro-refeicoes')">Cadastro de Refeições</a></li>
+                <li><a href="cadastro_refeições_servidas.html" onclick="navigateTo('cadastro-refeicoes')">Cadastro de Refeições</a></li>
                 <li><a href="#" onclick="navigateTo('manutencao-cozinha')">Manutenção Cozinha</a></li>
-                <li><a href="#" onclick="navigateTo('relatorios')">Relatórios</a></li>
+                <li><a href="relatorios.html" onclick="navigateTo('relatorios')">Relatórios</a></li>
                 <li><a href="#" onclick="navigateTo('retiradas')">Retiradas</a></li>
             </ul>
         </div>
         <div class="navbar-user">
-            <input type="text" placeholder="Pesquisar...">
-            <a href="#" class="user-menu" onclick="toggleUserMenu()"><img src="img/user-png-icon-user-2-icon-png-file-512x512-pixel-512.png" id="img-user"/></a>
+            <a href="perfiluser.html" class="user-menu" onclick="toggleUserMenu()"><img src="img/user-png-icon-user-2-icon-png-file-512x512-pixel-512.png" id="img-user"/></a>
         </div>
         <div class="hamburger-menu" onclick="toggleMenu()">
             <div class="bar"></div>
@@ -46,25 +45,7 @@
 </main> -->
 
 <!-- Script para o menu hamburguer e menu de usuário -->
-<script>
-    function toggleMenu() {
-        var menu = document.getElementById('navbarMenu');
-        menu.classList.toggle('active');
-    }
-
-    function toggleUserMenu() {
-        var userMenu = document.querySelector('.user-menu');
-        // Exemplo simples de alternância do menu do usuário
-        alert('Aqui você poderia implementar a lógica para o menu do usuário');
-    }
-
-    function navigateTo(page) {
-        // Simplesmente alertando para demonstrar a navegação
-        alert('Você está navegando para: ' + page);
-        // Aqui você pode redirecionar para a página desejada utilizando window.location.href
-        // Exemplo: window.location.href = 'https://seusite.com/' + page;
-    }
-</script>
+<script src="JS/home.js"></script>
 
 </body>
 </html>

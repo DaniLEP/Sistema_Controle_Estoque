@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Proteínas</title>
+    <link rel="stylesheet" href="CSS/refeições-servidas.css">
+</head>
+<body>
+
+	
+<div class="container">
+	<img id="proteinas" src="img/Cadastro Refeições Servidas.png" alt=""/>
+    <h1>Cadastro de <br/>Refeições Servidas</h1> <br></br>
+    <form id="formCadastro">
+        <div class="form-group">
+            <label for="turma">Turma/Funcionários:</label>
+            <input type="text" id="proteina" name="proteina" required>
+        </div>
+        <div class="form-group">
+            <label for="quantidade-café">Quantidade Café da Manhã:</label>
+            <input type="number" id="quantidade" name="quantidade" min="0" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="quantidade-almoço">Quantidade Almoço:</label>
+            <input type="number" id="quantidade" name="quantidade" min="0" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="quantidade-lanche">Quantidade Lanche da Tarde:</label>
+            <input type="number" id="quantidade" name="quantidade" min="0" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="quantidade-jantar">Quantidade Jantar:</label>
+            <input type="number" id="quantidade" name="quantidade" min="0" step="0.01" required>
+        </div>
+        <div class="form-group">
+            <label for="dataCadastro">Data de Refeições:</label>
+            <input type="date" id="dataCadastro" name="dataCadastro" required>
+        </div>    
+        <div class="form-group">
+            <button type="submit">Salvar</button>
+            <button type="button" onclick="limparForm()">Limpar</button>
+            <button type="button" onclick="voltar()"><a href="home.html" id="voltar">Voltar</a></button>
+        </div>
+    </form>
+</div> 
+
+<!-- Script JavaScript para cálculo do valor total -->
+<script>
+    const formCadastro = document.getElementById('formCadastro');
+    const valorUnitarioInput = document.getElementById('valorUnitario');
+    const quantidadeInput = document.getElementById('quantidade');
+    const valorTotalInput = document.getElementById('valorTotal');
+
+    // Adicionando evento de submit para o formulário
+    formCadastro.addEventListener('submit', function(event) {
+        event.preventDefault(); // Evita o envio do formulário
+        calcularValorTotal();
+        // Aqui você pode adicionar lógica para salvar os dados
+        alert('Dados salvos com sucesso!');
+        limparForm();
+    });
+
+    // Função para calcular o valor total
+    function calcularValorTotal() {
+        const valorUnitario = parseFloat(valorUnitarioInput.value);
+        const quantidade = parseFloat(quantidadeInput.value);
+        const valorTotal = valorUnitario * quantidade;
+        valorTotalInput.value = valorTotal.toFixed(2); // Formata o valor para 2 casas decimais
+    }
+
+    // Função para limpar o formulário
+    function limparForm() {
+        formCadastro.reset();
+        valorTotalInput.value = ''; // Limpa o campo de valor total
+    }
+
+    // Função para voltar (simulação, redireciona para a página anterior)
+    function voltar() {
+        window.history.back();
+    }
+</script>
+
+</body>
+</html>
