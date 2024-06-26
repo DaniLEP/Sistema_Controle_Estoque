@@ -3,6 +3,7 @@ function toggleMenu() {
     menu.classList.toggle('active');
 }
 
+// função não reconrrente ao menu! 
 // function toggleUserMenu() {
 //     var userMenu = document.querySelector('.user-menu');
 //     // Exemplo simples de alternância do menu do usuário

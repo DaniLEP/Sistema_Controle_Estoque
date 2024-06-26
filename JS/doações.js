@@ -7,6 +7,7 @@ const valorTotalInput = document.getElementById('valorTotal');
 formCadastro.addEventListener('submit', function(event) {
     event.preventDefault(); // Evita o envio do formulário
     calcularValorTotal();
+    
     // Aqui você pode adicionar lógica para salvar os dados
     alert('Dados salvos com sucesso!');
     limparForm();
