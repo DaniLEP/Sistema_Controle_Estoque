@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard de Produtos</title>
-  <link rel="stylesheet" href="CSS/relatorio-proteina.css">
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Relatório de Proteína</title>
+        <link rel="stylesheet" href="CSS/relatorio-proteina.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    </head>
 <body>
-  <div class="container">
-    <h1>Relátorio Proteina</h1>
-    <div class="chart-container">
-      <canvas id="myChart"></canvas>
+    <div class="container">
+        <h1>Relatório de Proteina</h1>
+        <div class="chart-container">
+            <canvas id="chartProdutos"></canvas>
+        </div>
+        <div id="dashboard"></div>
+        <button type="button" onclick="voltar()"><a href="relatorios.html" id="voltar">Voltar</a></button>
+        <div class="button-container">
+            <button id="downloadPDF">Baixar PDF</button>
+            <button id="downloadExcel">Baixar Excel</button>
+        </div>
     </div>
-    <div id="dashboard">
-      <!-- Aqui serão inseridos dinamicamente os produtos -->
-    </div>
-    <button type="button" onclick="voltar()"><a href="relatorios.html" id="voltar">Voltar</a></button>
-
-  </div>
-
-
-  <script src="JS/relatorio-proteina.js"></script>
+    <script src="JS/relatorio-proteina.js"></script>
 </body>
 </html>

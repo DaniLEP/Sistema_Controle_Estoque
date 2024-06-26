@@ -1,94 +1,130 @@
-document.addEventListener('DOMContentLoaded', function() {    
+document.addEventListener('DOMContentLoaded', function() {
     const dashboard = document.getElementById('dashboard');
-    const canvas = document.getElementById('myChart');
-    const ctx = canvas.getContext('2d');
-  
-    // Dados dos produtos (exemplo)
-    const produtos = [
-      { sku: 'SKU001', proteina: 'Whey Protein', fornecedor: 'Fornecedor A', quantidade: 2.5, tipo: 'Pó', unidadeMedida: 'kg', valorTotal: 150.00, valorUnitario: 60.00, dataCadastro: '2024-06-01', dataVencimento: '2024-06-30' },
-      { sku: 'SKU002', proteina: 'Caseína', fornecedor: 'Fornecedor B', quantidade: 1.0, tipo: 'Pó', unidadeMedida: 'kg', valorTotal: 80.00, valorUnitario: 80.00, dataCadastro: '2024-06-10', dataVencimento: '2024-07-10' },
-      { sku: 'SKU003', proteina: 'Albumina', fornecedor: 'Fornecedor C', quantidade: 0.5, tipo: 'Pó', unidadeMedida: 'kg', valorTotal: 30.00, valorUnitario: 60.00, dataCadastro: '2024-06-15', dataVencimento: '2024-07-15' }
-    ];
-  
-    // Função para calcular diferença em dias entre duas datas
-    function calcularDiferencaDias(data1, data2) {
+    const ctxProdutos = document.getElementById('chartProdutos').getContext('2d');
+    const downloadPDFButton =  document.getElementById('downloadPDF');
+    const downloadExcelButton = document.getElementById('downloadExcel');
+
+  // Dados dos produtos (exemplo)
+  const produtos = [
+      { SKU: '001', Proteina: 'Frango', Fornecedor: 'Fornecedor 1', QuantKG: 10, Tipo: 'Carne Branca', UnidadeMedida: 'kg', ValorTotal: 100, ValorUnitario: 10, DataCadastro: '2024-01-01', DataVencimento: '2024-06-01' },
+      { SKU: '002', Proteina: 'Carne Bovina', Fornecedor: 'Fornecedor 2', QuantKG: 20, Tipo: 'Carne Vermelha', UnidadeMedida: 'kg', ValorTotal: 200, ValorUnitario: 10, DataCadastro: '2024-01-10', DataVencimento: '2024-07-10' },
+      { SKU: '003', Proteina: 'Peixe', Fornecedor: 'Fornecedor 3', QuantKG: 15, Tipo: 'Carne Branca', UnidadeMedida: 'kg', ValorTotal: 150, ValorUnitario: 10, DataCadastro: '2024-02-01', DataVencimento: '2024-08-01' },
+      { SKU: '004', Proteina: 'Carne Suína', Fornecedor: 'Fornecedor 4', QuantKG: 25, Tipo: 'Carne Vermelha', UnidadeMedida: 'kg', ValorTotal: 250, ValorUnitario: 10, DataCadastro: '2024-03-01', DataVencimento: '2024-09-01' }
+  ];
+
+  // Função para calcular diferença em dias entre duas datas
+  function calcularDiferencaDias(data1, data2) {
       const diff = Math.abs(new Date(data2) - new Date(data1));
       return Math.ceil(diff / (1000 * 60 * 60 * 24));
-    }
-  
-    // Função para formatar a data no formato dd/mm/yyyy
-    function formatarData(data) {
+  }
+
+  // Função para formatar a data no formato dd/mm/yyyy
+  function formatarData(data) {
       const date = new Date(data);
       const day = date.getDate().toString().padStart(2, '0');
       const month = (date.getMonth() + 1).toString().padStart(2, '0');
       const year = date.getFullYear();
       return `${day}/${month}/${year}`;
-    }
-  
-    // Gerar dados para o gráfico (quantidade de cada produto)
-    const labels = produtos.map(produto => produto.proteina);
-    const data = produtos.map(produto => produto.quantidade);
-  
-    // Configurações do gráfico
-    const myChart = new Chart(ctx, {
+  }
+
+  // Gerar dados para o gráfico de produtos (bar chart)
+  const labelsProdutos = produtos.map(produto => produto.Proteina);
+  const dataQuantKG = produtos.map(produto => produto.QuantKG);
+  const dataValorTotal = produtos.map(produto => produto.ValorTotal);
+
+  new Chart(ctxProdutos, {
       type: 'bar',
       data: {
-        labels: labels,
-        datasets: [{
-          label: 'Quantidade (KG)',
-          data: data,
-          backgroundColor: '#007bff',
-          borderColor: '#007bff',
-          borderWidth: 1
-        }]
+          labels: labelsProdutos,
+          datasets: [
+              {
+                  label: 'Quantidade (kg)',
+                  data: dataQuantKG,
+                  backgroundColor: '#007bff'
+              },
+              {
+                  label: 'Valor Total (R$)',
+                  data: dataValorTotal,
+                  backgroundColor: '#28a745'
+              }
+          ]
       },
       options: {
-        scales: {
-          yAxes: [{
-            ticks: {
-              beginAtZero: true
-            }
-          }]
-        }
+          scales: {
+              y: {
+                  beginAtZero: true
+              }
+          }
       }
-    });
-  
-    // Renderizar os produtos no dashboard
-    produtos.forEach(produto => {
+  });
+
+  // Renderizar os produtos no dashboard
+  produtos.forEach(produto => {
       const productDiv = document.createElement('div');
       productDiv.classList.add('product');
-  
       const produtoInfo = `
-        <div class="product-info">
-          <div><strong>SKU:</strong> ${produto.sku}</div>
-          <div><strong>Proteína:</strong> ${produto.proteina}</div>
-          <div><strong>Fornecedor:</strong> ${produto.fornecedor}</div>
-          <div><strong>Quantidade:</strong> ${produto.quantidade} ${produto.unidadeMedida}</div>
-          <div><strong>Tipo:</strong> ${produto.tipo}</div>
-          <div><strong>Valor Total:</strong> R$ ${produto.valorTotal.toFixed(2)}</div>
-          <div><strong>Valor Unitário:</strong> R$ ${produto.valorUnitario.toFixed(2)}</div>
-          <div><strong>Data de Cadastro:</strong> ${formatarData(produto.dataCadastro)}</div>
-          <div><strong>Data de Vencimento:</strong> ${formatarData(produto.dataVencimento)}</div>
-          <div><strong>Dias para Consumir:</strong> ${calcularDiferencaDias(produto.dataCadastro, produto.dataVencimento)} dias</div>
-        </div>
-     
+          <div class="product-info">
+              <div><strong>SKU:</strong> ${produto.SKU}</div>
+              <div><strong>Proteína:</strong> ${produto.Proteina}</div>
+              <div><strong>Fornecedor:</strong> ${produto.Fornecedor}</div>
+              <div><strong>Quantidade (kg):</strong> ${produto.QuantKG}</div>
+              <div><strong>Tipo:</strong> ${produto.Tipo}</div>
+              <div><strong>Unidade de Medida:</strong> ${produto.UnidadeMedida}</div>
+              <div><strong>Valor Total (R$):</strong> ${produto.ValorTotal}</div>
+              <div><strong>Valor Unitário (R$):</strong> ${produto.ValorUnitario}</div>
+              <div><strong>Data de Cadastro:</strong> ${formatarData(produto.DataCadastro)}</div>
+              <div><strong>Data de Vencimento:</strong> ${formatarData(produto.DataVencimento)}</div>
+              <div><strong>Consumir em até:</strong> ${calcularDiferencaDias(produto.DataCadastro, produto.DataVencimento)} dias</div>
+          </div>
       `;
-  
+
       productDiv.innerHTML = produtoInfo;
       dashboard.appendChild(productDiv);
+  });
+});
+
+    // Função para baixar o relatório em PDF
+    downloadPDFButton.addEventListener('click', function() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.text('Relatório de Produtos', 10, 10);
+        produtos.forEach((produto, index) => {
+            doc.text(`\nProduto ${index + 1}`, 10, 20 + (index * 10));
+            doc.text(`SKU: ${produto.SKU}`, 10, 30 + (index * 10));
+            doc.text(`Produto: ${produto.Proteina}`, 10, 40 + (index * 10));
+            doc.text(`Fornecedor: ${produto.Fornecedor}`, 10, 50 + (index * 10));
+            doc.text(`Quantidade (kg): ${produto.QuantKG}`, 10, 60 + (index * 10));
+            doc.text(`Unidade de Medida: ${produto.UnidadeMedida}`, 10, 70 + (index * 10));
+            doc.text(`Peso Unitário (kg): ${produto.ValorUnitario}`, 10, 80 + (index * 10));
+            doc.text(`Peso Total (kg): ${produto.ValorTotall}`, 10, 90 + (index * 10));
+            doc.text(`Data de Cadastro: ${formatarData(produto.DataCadastro)}`, 10, 100 + (index * 10));
+            doc.text(`Data de Vencimento: ${formatarData(produto.DataVencimento)}`, 10, 110 + (index * 10));
+            doc.text(`Consumir em até: ${calcularDiferencaDias(produto.DataCadastro, produto.DataVencimento)} dias`, 10, 120 + (index * 10));
+        });
+        doc.save('Relatório-Proteína.pdf');
     });
   
-    // Função para consumir o produto em até X dias
-    window.consumirProduto = function(sku) {
-      const inputConsumir = document.getElementById(`consumir${sku}`);
-      const diasParaConsumir = inputConsumir.value;
-  
-      if (diasParaConsumir === '' || diasParaConsumir <= 0) {
-        alert('Por favor, informe um número válido de dias para consumo.');
-        return;
-      }
-  
-      console.log(`Produto SKU ${sku} será consumido em até ${diasParaConsumir} dias.`);
-      // Aqui você pode implementar a lógica para consumir o produto conforme necessário
-    };
-  });
+    // Função para baixar o relatório em Excel
+    downloadExcelButton.addEventListener('click', function() {
+        const wb = XLSX.utils.book_new();
+        const wsData = [
+            ["SKU", "Proteina", "Fornecedor", "Quantidade (kg)", "Unidade de Medida", "Valor Unitário", "Valor Total ", "Data de Cadastro", "Data de Vencimento", "Consumir em até", "Retirada"]
+        ];
+        produtos.forEach(produto => {
+            wsData.push([
+                produto.SKU,
+                produto.Proteina,
+                produto.Fornecedor,
+                produto.QuantKG,
+                produto.UnidadeMedida,
+                produto.ValorUnitario,
+                produto.ValorTotal,
+                formatarData(produto.DataCadastro),
+                formatarData(produto.DataVencimento),
+                calcularDiferencaDias(produto.DataCadastro, produto.DataVencimento) + " dias"
+            ]);
+        });
+        const ws = XLSX.utils.aoa_to_sheet(wsData);
+        XLSX.utils.book_append_sheet(wb, ws, "Produtos");
+        XLSX.writeFile(wb, 'relatorio-produtos.xlsx');
+});
