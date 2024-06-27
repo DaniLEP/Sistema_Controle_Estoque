@@ -5,7 +5,6 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
 
 
     if (username === 'Danilo' && password === '123') {
-        alert('Login successful!');
         window.location = "./home.html"
  
     } else {    
