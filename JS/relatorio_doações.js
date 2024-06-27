@@ -99,14 +99,14 @@ document.addEventListener('DOMContentLoaded', function() {
             doc.text(`Data de Vencimento: ${formatarData(produto.DataVencimento)}`, 10, 110 + (index * 10));
             doc.text(`Consumir em até: ${calcularDiferencaDias(produto.DataCadastro, produto.DataVencimento)} dias`, 10, 120 + (index * 10));
         });
-        doc.save('relatorio-produtos.pdf');
+        doc.save('relatorio-doações-recebidas.pdf');
     });
   
     // Função para baixar o relatório em Excel
     downloadExcelButton.addEventListener('click', function() {
         const wb = XLSX.utils.book_new();
         const wsData = [
-            ["SKU", "Produto", "Fornecedor", "Quantidade (kg)", "Unidade de Medida", "Peso Unitário (kg)", "Peso Total (kg)", "Data de Cadastro", "Data de Vencimento", "Consumir em até"]
+            ["SKU", "Produto", "Fornecedor", "Quantidade (kg)", "Unidade de Medida", "Peso Unitário (kg)", "Peso Total (kg)", "Data de Cadastro", "Data de Vencimento", "Consumir em até", "Retirada em"]
         ];
         produtos.forEach(produto => {
             wsData.push([
@@ -124,6 +124,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         const ws = XLSX.utils.aoa_to_sheet(wsData);
         XLSX.utils.book_append_sheet(wb, ws, "Produtos");
-        XLSX.writeFile(wb, 'relatorio-produtos.xlsx');
+        XLSX.writeFile(wb, 'relatorio-doações-recebidas.xlsx');
     });
 });

@@ -46,6 +46,7 @@ h1 {
     margin-bottom: 10px;
 }
 
+
 button {
     padding: 10px 20px;
     margin-right: 10px;
@@ -59,10 +60,8 @@ button {
   
   #voltar{
   text-decoration: none;
-  color: #ffff
-  ;
+  color: #ffff;
   }
-  
   button:hover {
     background-color: #0056b3;
   }
