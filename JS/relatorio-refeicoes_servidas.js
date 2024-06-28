@@ -4,6 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const ctxAlmoco = document.getElementById('chartAlmoco').getContext('2d');
     const ctxLanchedatarde = document.getElementById('chartLanchedatarde').getContext('2d');
     const ctxJantar = document.getElementById('chartJantar').getContext('2d');
+    const downloadPDFButton = document.getElementById('downloadPDF');
+    const downloadExcelButton = document.getElementById('downloadExcel');
   
     // Dados dos produtos (exemplo)
     const produtos = [
@@ -103,5 +105,43 @@ document.addEventListener('DOMContentLoaded', function() {
   
         productDiv.innerHTML = produtoInfo;
         dashboard.appendChild(productDiv);
+    });
+
+    // Função para baixar o relatório em PDF
+    downloadPDFButton.addEventListener('click', function() {
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF();
+        doc.text('Relatório de Refeições Servidas', 10, 10);
+        produtos.forEach((produto, index) => {
+            doc.text(`Refeições Servidas ${index + 1}`, 10, 20 + (index * 10));
+            doc.text(`Turma/Funcionário: ${produto.TurmaFuncionario}`, 10, 30 + (index * 10));
+            doc.text(`Quantidade de Café da Manhã: ${produto.quantidadeCafedamanha}`, 10, 40 + (index * 10));
+            doc.text(`Quantidade de Almoço: ${produto.quantidadeAlmoco}`, 10, 50 + (index * 10));
+            doc.text(`Quantidade de Lanche da Tarde: ${produto.quantidadeLanchedatarde}`, 10, 60 + (index * 10));
+            doc.text(`Quantidade de Jantar: ${produto.quantidadeJantar}`, 10, 70 + (index * 10));
+            doc.text(`Data de Consumo: ${formatarData(produto.dataConsumo)}`, 10, 80 + (index * 10));
+        });
+        doc.save('relatorio-refeicoes-servidas.pdf');
+    });
+  
+    // Função para baixar o relatório em Excel
+    downloadExcelButton.addEventListener('click', function() {
+        const wb = XLSX.utils.book_new();
+        const wsData = [
+            ["Turma/Funcionário", "Quantidade de Café da Manhã", "Quantidade de Almoço", "Quantidade de Lanche da Tarde", "Quantidade de Jantar", "Data de Consumo"]
+        ];
+        produtos.forEach(produto => {
+            wsData.push([
+                produto.TurmaFuncionario,
+                produto.quantidadeCafedamanha,
+                produto.quantidadeAlmoco,
+                produto.quantidadeLanchedatarde,
+                produto.quantidadeJantar,
+                formatarData(produto.dataConsumo)
+            ]);
+        });
+        const ws = XLSX.utils.aoa_to_sheet(wsData);
+        XLSX.utils.book_append_sheet(wb, ws, "Refeições Servidas");
+        XLSX.writeFile(wb, 'relatorio-refeicoes-servidas.xlsx');
     });
 });

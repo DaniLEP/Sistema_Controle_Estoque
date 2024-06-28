@@ -43,9 +43,7 @@ h1 {
   padding: 5px;
 }
 
-.product-info > div:nth-child(odd) {
-  background-color: #f2f2f2;
-}
+
 
 .consumir {
   margin-top: 10px;

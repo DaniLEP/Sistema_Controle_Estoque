@@ -5,21 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta de Produtos</title>
     <link rel="stylesheet" href="CSS/anual.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Consulta de Produtos por SKU</h1>
-        <input type="text" id="skuInput" placeholder="Digite o SKU do produto">
-        <button onclick="consultarPorSKU()">Consultar</button>
-        <div id="relatorio"></div>
-        <div class="button-container">
-            <button onclick="salvarPDF()">Salvar em PDF</button>
-            <button onclick="salvarExcel()">Salvar em Excel</button>
-            <button type="button" onclick="voltar()"><a href="relatorios.html" id="voltar">Voltar</a></button>
-          </div>
-    </div>
+    <input type="text" id="skuInput" placeholder="Digite o SKU">
+    <button onclick="consultarPorSKU()">Consultar</button>
+    <div id="relatorio"></div>
+    <button id="salvarExcelBtn" onclick="salvarExcel()" disabled>Salvar em Excel</button>
+    <button id="salvarPdfBtn" onclick="salvarPDF()" disabled>Salvar em PDF</button>
+    <button type="button" onclick="voltar()"><a href="relatorios.html" id="voltar">Voltar</a></button>
+</div>
     <script src="JS/mensal.js"></script>
 </body>
 </html>
