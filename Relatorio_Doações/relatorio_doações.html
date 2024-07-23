@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório de Doações Recebidas</title>
-    <link rel="stylesheet" href="CSS/relatorio_doações.css">
+    <link rel="stylesheet" href="relatorio_doações.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Relatório de Produtos</h1>
+        <h1>Relatório de Doações Recebidas</h1>
         <div class="chart-container">
             <canvas id="chartProdutos"></canvas>
         </div>
@@ -19,11 +19,10 @@
         <div class="button-container">
             <button id="downloadPDF">Baixar PDF</button>
             <button id="downloadExcel">Baixar Excel</button>
-            <button type="button" onclick="voltar()"><a href="relatorios.html" id="voltar">Voltar</a></button>
-
+            <button type="button" onclick="voltar()"><a href="/Relatorios/relatorios.html" id="voltar">Voltar</a></button>
         </div>
 
     </div>
-    <script src="JS/relatorio_doações.js"></script>
+    <script src="relatorio_doações.js"></script>
 </body>
 </html>

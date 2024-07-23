@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
   
     // Dados dos produtos (exemplo)
     const produtos = [
-        { SKU: '001', Produto: 'Arroz', Fornecedor: 'Fornecedor 1', QuantKG: 50, UnidadeMedida: 'kg', PesoUnitario: 1, PesoTotal: 50, DataCadastro: '2024-01-01', DataVencimento: '2024-06-01' },
-        { SKU: '002', Produto: 'Feijão', Fornecedor: 'Fornecedor 2', QuantKG: 30, UnidadeMedida: 'kg', PesoUnitario: 1, PesoTotal: 30, DataCadastro: '2024-01-10', DataVencimento: '2024-07-10' },
-        { SKU: '003', Produto: 'Macarrão', Fornecedor: 'Fornecedor 3', QuantKG: 20, UnidadeMedida: 'kg', PesoUnitario: 0.5, PesoTotal: 10, DataCadastro: '2024-02-01', DataVencimento: '2024-08-01' },
-        { SKU: '004', Produto: 'Farinha', Fornecedor: 'Fornecedor 4', QuantKG: 25, UnidadeMedida: 'kg', PesoUnitario: 1, PesoTotal: 25, DataCadastro: '2024-03-01', DataVencimento: '2024-09-01' }
+        { SKU: '001', Hortalicas: 'Alface Amaricano', Fornecedor: 'Fornecedor 1', QuantKG: 50,  Tipo: "Verdura", UnidadeMedida: 'kg', ValorUnitario: 1, ValorTotal: 50, DataCadastro: '2024-01-01', DataVencimento: '2024-06-01' },
+        { SKU: '002', Hortalicas: 'Maçã', Fornecedor: 'Fornecedor 2', QuantKG: 30,  Tipo: "Fruta", UnidadeMedida: 'kg', ValorUnitario: 1, ValorTotal: 30, DataCadastro: '2024-01-10', DataVencimento: '2024-07-10' },
+        { SKU: '003', Hortalicas: 'Beringela', Fornecedor: 'Fornecedor 3', QuantKG: 20, Tipo: "Legumes" , UnidadeMedida: 'kg', ValorUnitario: 0.5, ValorTotal: 10, DataCadastro: '2024-02-01', DataVencimento: '2024-08-01' },
+        { SKU: '004', Hortalicas: '#', Fornecedor: 'Fornecedor 4', QuantKG: 25,  Tipo: "#", UnidadeMedida: 'kg', ValorUnitario: 1, ValorTotal: 25, DataCadastro: '2024-03-01', DataVencimento: '2024-09-01' }
     ];
   
     // Função para calcular diferença em dias entre duas datas
@@ -28,9 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   
     // Gerar dados para o gráfico de produtos (bar chart)
-    const labelsProdutos = produtos.map(produto => produto.Produto);
+    const labelsProdutos = produtos.map(produto => produto.Hortalicas);
     const dataQuantKG = produtos.map(produto => produto.QuantKG);
-    const dataPesoTotal = produtos.map(produto => produto.PesoTotal);
+    const dataPesoTotal = produtos.map(produto => produto.ValorTotal);
   
     new Chart(ctxProdutos, {
         type: 'bar',
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     backgroundColor: '#007bff'
                 },
                 {
-                    label: 'Peso Total (kg)',
+                    label: 'Valor Total (kg)',
                     data: dataPesoTotal,
                     backgroundColor: '#28a745'
                 }
@@ -65,12 +65,13 @@ document.addEventListener('DOMContentLoaded', function() {
         const produtoInfo = `
             <div class="product-info">
                 <div><strong>SKU:</strong> ${produto.SKU}</div>
-                <div><strong>Produto:</strong> ${produto.Produto}</div>
+                <div><strong>Hortaliças:</strong> ${produto.Hortalicas}</div>
                 <div><strong>Fornecedor:</strong> ${produto.Fornecedor}</div>
                 <div><strong>Quantidade (kg):</strong> ${produto.QuantKG}</div>
+                <div><strong>Tipo:</strong> ${produto.Tipo}</div>
                 <div><strong>Unidade de Medida:</strong> ${produto.UnidadeMedida}</div>
-                <div><strong>Peso Unitário (kg):</strong> ${produto.PesoUnitario}</div>
-                <div><strong>Peso Total (kg):</strong> ${produto.PesoTotal}</div>
+                <div><strong>Valor Unitário (kg):</strong> ${produto.ValorUnitario}</div>
+                <div><strong>Valor Total (kg):</strong> ${produto.ValorTotal}</div>
                 <div><strong>Data de Cadastro:</strong> ${formatarData(produto.DataCadastro)}</div>
                 <div><strong>Data de Vencimento:</strong> ${formatarData(produto.DataVencimento)}</div>
                 <div><strong>Consumir em até:</strong> ${calcularDiferencaDias(produto.DataCadastro, produto.DataVencimento)} dias</div>
@@ -85,45 +86,47 @@ document.addEventListener('DOMContentLoaded', function() {
     downloadPDFButton.addEventListener('click', function() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-        doc.text('Relatório de Produtos', 10, 10);
+        doc.text('Relatório de Mantimento', 10, 10);
         produtos.forEach((produto, index) => {
-            doc.text(`\nProduto ${index + 1}`, 10, 20 + (index * 10));
+            doc.text(`\nMantimento ${index + 1}`, 10, 20 + (index * 10));
             doc.text(`SKU: ${produto.SKU}`, 10, 30 + (index * 10));
-            doc.text(`Produto: ${produto.Produto}`, 10, 40 + (index * 10));
+            doc.text(`Hortaliçaas: ${produto.Hortalicas}`, 10, 40 + (index * 10));
             doc.text(`Fornecedor: ${produto.Fornecedor}`, 10, 50 + (index * 10));
             doc.text(`Quantidade (kg): ${produto.QuantKG}`, 10, 60 + (index * 10));
+            doc.text(`Tipo: ${produto.Tipo}`, 10, 60 + (index * 10));
             doc.text(`Unidade de Medida: ${produto.UnidadeMedida}`, 10, 70 + (index * 10));
-            doc.text(`Peso Unitário (kg): ${produto.PesoUnitario}`, 10, 80 + (index * 10));
-            doc.text(`Peso Total (kg): ${produto.PesoTotal}`, 10, 90 + (index * 10));
+            doc.text(`Peso Unitário (kg): ${produto.ValorUnitario}`, 10, 80 + (index * 10));
+            doc.text(`Peso Total (kg): ${produto.ValorTotal}`, 10, 90 + (index * 10));
             doc.text(`Data de Cadastro: ${formatarData(produto.DataCadastro)}`, 10, 100 + (index * 10));
             doc.text(`Data de Vencimento: ${formatarData(produto.DataVencimento)}`, 10, 110 + (index * 10));
             doc.text(`Consumir em até: ${calcularDiferencaDias(produto.DataCadastro, produto.DataVencimento)} dias`, 10, 120 + (index * 10));
         });
-        doc.save('relatorio-doações-recebidas.pdf');
+        doc.save('relatorio-mantimento.pdf');
     });
   
     // Função para baixar o relatório em Excel
     downloadExcelButton.addEventListener('click', function() {
         const wb = XLSX.utils.book_new();
         const wsData = [
-            ["SKU", "Produto", "Fornecedor", "Quantidade (kg)", "Unidade de Medida", "Peso Unitário (kg)", "Peso Total (kg)", "Data de Cadastro", "Data de Vencimento", "Consumir em até"]
+            ["SKU", "Hortaliças", "Fornecedor", "Quantidade (kg)", "Tipo", "Unidade de Medida", "Valor Unitário (kg)", "Valor Total (kg)", "Data de Cadastro", "Data de Vencimento", "Consumir em até", "Retirada em"]
         ];
         produtos.forEach(produto => {
             wsData.push([
                 produto.SKU,
-                produto.Produto,
+                produto.Hortalicas,
                 produto.Fornecedor,
                 produto.QuantKG,
+                produto.Tipo,
                 produto.UnidadeMedida,
-                produto.PesoUnitario,
-                produto.PesoTotal,
+                produto.ValorUnitario,
+                produto.ValorTotal,
                 formatarData(produto.DataCadastro),
                 formatarData(produto.DataVencimento),
                 calcularDiferencaDias(produto.DataCadastro, produto.DataVencimento) + " dias"
             ]);
         });
         const ws = XLSX.utils.aoa_to_sheet(wsData);
-        XLSX.utils.book_append_sheet(wb, ws, "Produtos");
-        XLSX.writeFile(wb, 'relatorio-doações-recebidas.xlsx');
+        XLSX.utils.book_append_sheet(wb, ws, "Proteina");
+        XLSX.writeFile(wb, 'relatorio-proteína.xlsx');
     });
 });

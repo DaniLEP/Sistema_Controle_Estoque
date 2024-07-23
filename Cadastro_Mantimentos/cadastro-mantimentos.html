@@ -3,39 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro de Proteínas</title>
-    <link rel="stylesheet" href="CSS/cadastro-proteina.css">
+    <title>Cadastro de Mantimentos</title>
+    <link rel="stylesheet" href="cadastros-mantimentos.css">
 </head>
 <body>
 
 	
 <div class="container">
-	<img id="proteinas" src="img/proteina.png" alt=""/>
-    <h1>Cadastro de Proteínas</h1> <br></br>
+	<img id="proteinas" src="/img/mantimentos.png" alt=""/>
+    <h1>Cadastro de Mantimentos</h1> <br></br>
     <form id="formCadastro">
         <div class="form-group">
             <div class="form-group">
                 <label for="sku">SKU:</label>
                 <input type="text" id="sku" name="sku">
             </div>
-            <label for="proteina">Proteína:</label>
-            <input type="text" id="proteina" name="proteina" required>
-        </div>
-        <div class="form-group">
-            <label for="fornecedor">Fornecedor:</label>
-            <input type="text" id="fornecedor" name="fornecedor" required>
-        </div>
+      
         <div class="form-group">
             <label for="quantidade">Quantidade (KG):</label>
             <input type="number" id="quantidade" name="quantidade" min="0" step="0.01" required>
-        </div>
-        <div class="form-group">
-            <label for="unidade">Unidade de Medida:</label>
-            <input type="text" id="unidade" name="unidade" required>
-        </div>
-        <div class="form-group">
-            <label for="tipo">Tipo:</label>
-            <input type="text" id="tipo" name="tipo" required>
         </div>
         <div class="form-group">
             <label for="dataCadastro">Data de Cadastro:</label>
@@ -45,24 +31,22 @@
             <label for="dataVencimento">Data de Vencimento:</label>
             <input type="date" id="dataVencimento" name="dataVencimento" required>
         </div>
-        <div class="form-group">
-            <label for="valorUnitario">Valor Unitário:</label>
-            <input type="number" id="valorUnitario" name="valorUnitario" min="0" step="0.01" required>
-        </div>
+
         <div class="form-group">
             <label for="valorTotal">Valor Total:</label>
             <input type="number" id="valorTotal" name="valorTotal" min="0" step="0.01" readonly>
         </div>
+    
         <div class="form-group">
             <button type="submit">Salvar</button>
             <button type="button" onclick="limparForm()">Limpar</button>
-            <button type="button" onclick="voltar()"><a href="cadastro.html" id="voltar">Voltar</a></button>
+            <button type="button" onclick="voltar()"><a href="/Cadastro/cadastro.html" id="voltar">Voltar</a></button>
         </div>
     </form>
-</div>
+</div> 
 
 <!-- Script JavaScript para cálculo do valor total -->
-<script src="JS/proteina.js"> </script>
+<script src="mantimentos.js"> </script>
 
 </body>
 </html>

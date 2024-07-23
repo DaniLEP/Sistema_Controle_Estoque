@@ -1,36 +1,45 @@
 body {
   font-family: Arial, sans-serif;
   background-color: #00009C;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 0;
-  padding: 0;
+  padding: 20px;
 }
 
 .container {
-  max-width: 1430px;
-  margin: 20px auto;
   background-color: #fff;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px 0;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
 .chart-container {
-  display: inline-block;
-  margin: 30px 0;
-  height: 150px;
-  width: 150px;
-  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 800px;
+}
+
+#dashboard {
+  margin-top: 20px;
+  width: 100%;
 }
 
 .product {
-  margin-bottom: 20px;
+  background-color: #f9f9f9;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 4px;
+  margin-bottom: 10px;
 }
 
 .product-info {
@@ -39,27 +48,6 @@ h1 {
   gap: 9px;
 }
 
-.product-info > div {
-  padding: 5px;
-}
-
-.product-info > div:nth-child(odd) {
-  background-color: #f2f2f2;
-}
-
-.consumir {
-  margin-top: 10px;
-}
-
-.consumir label {
-  font-weight: bold;
-}
-
-.consumir input {
-  padding: 5px;
-  width: 150px;
-  margin-right: 10px;
-}
 
 button {
   padding: 10px 20px;
@@ -74,10 +62,8 @@ button {
 
 #voltar{
 text-decoration: none;
-color: #ffff
-;
+color: #ffff;
 }
-
 button:hover {
   background-color: #0056b3;
 }
