@@ -43,9 +43,11 @@ h1 {
 }
 
 .product-info {
-    margin-bottom: 10px;
-}
-
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+  }
+  
 button {
     padding: 10px 20px;
     margin-right: 10px;

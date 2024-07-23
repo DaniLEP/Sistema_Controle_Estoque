@@ -34,13 +34,11 @@ h1 {
     width: 100%;
 }
 
-.product {
-    background-color: #f9f9f9;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-bottom: 10px;
-}
+.product-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+  }
 
 .product-info {
     margin-bottom: 10px;
