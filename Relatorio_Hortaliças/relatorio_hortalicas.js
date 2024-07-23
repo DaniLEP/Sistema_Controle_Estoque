@@ -86,11 +86,11 @@ document.addEventListener('DOMContentLoaded', function() {
     downloadPDFButton.addEventListener('click', function() {
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF();
-        doc.text('Relatório de Mantimento', 10, 10);
+        doc.text('Relatório de Hortaliças', 10, 10);
         produtos.forEach((produto, index) => {
-            doc.text(`\nMantimento ${index + 1}`, 10, 20 + (index * 10));
+            doc.text(`\nHortaliças ${index + 1}`, 10, 20 + (index * 10));
             doc.text(`SKU: ${produto.SKU}`, 10, 30 + (index * 10));
-            doc.text(`Hortaliçaas: ${produto.Hortalicas}`, 10, 40 + (index * 10));
+            doc.text(`Hortaliças: ${produto.Hortalicas}`, 10, 40 + (index * 10));
             doc.text(`Fornecedor: ${produto.Fornecedor}`, 10, 50 + (index * 10));
             doc.text(`Quantidade (kg): ${produto.QuantKG}`, 10, 60 + (index * 10));
             doc.text(`Tipo: ${produto.Tipo}`, 10, 60 + (index * 10));
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
             doc.text(`Data de Vencimento: ${formatarData(produto.DataVencimento)}`, 10, 110 + (index * 10));
             doc.text(`Consumir em até: ${calcularDiferencaDias(produto.DataCadastro, produto.DataVencimento)} dias`, 10, 120 + (index * 10));
         });
-        doc.save('relatorio-mantimento.pdf');
+        doc.save('relatorio-hortaliças.pdf');
     });
   
     // Função para baixar o relatório em Excel
@@ -127,6 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         const ws = XLSX.utils.aoa_to_sheet(wsData);
         XLSX.utils.book_append_sheet(wb, ws, "Proteina");
-        XLSX.writeFile(wb, 'relatorio-proteína.xlsx');
+        XLSX.writeFile(wb, 'relatorio-hortaliças.xlsx');
     });
 });

@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
             doc.text(`Data de Vencimento: ${produto.dataVencimento}`, 10, 110 + (index * 10));
             doc.text(`Consumir em até: ${calcularDiferencaDias(produto.dataCadastro, produto.dataVencimento)} dias`, 10, 120 + (index * 10));
         });
-        doc.save('relatorio-produtos.pdf');
+        doc.save('relatorio-anual.pdf');
     }
 
     function salvarExcel() {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const ws = XLSX.utils.aoa_to_sheet(wsData);
         XLSX.utils.book_append_sheet(wb, ws, "Produtos");
-        XLSX.writeFile(wb, 'relatorio-produtos.xlsx');
+        XLSX.writeFile(wb, 'relatorio-anual.xlsx');
     }
 
     window.consultarPorSKU = consultarPorSKU;

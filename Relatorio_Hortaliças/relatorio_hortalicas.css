@@ -43,18 +43,10 @@ h1 {
 }
 
 .product-info {
-<<<<<<< HEAD:CSS/relatorio_hortalicas.css
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 9px;
-  }
-  
-=======
     margin-bottom: 10px;
 }
 
 
->>>>>>> 0b5fbdba1ff4aca78722b55209406fd9c49f0ed4:Relatorio_Hortaliças/relatorio_hortalicas.css
 button {
     padding: 10px 20px;
     margin-right: 10px;
