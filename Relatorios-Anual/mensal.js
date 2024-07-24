@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', function() {
         relatorioDiv.innerHTML = '';
 
         const produto = dadosRelatorio.find(item => item.sku === skuInput);
-''
         if (produto) {
             const produtoInfo = `
                 <div class="produto">
