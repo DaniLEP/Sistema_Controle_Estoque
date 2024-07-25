@@ -63,7 +63,7 @@ button:hover {
 
 
 #error-msg {
-    color: red;
+    color: rgb(255, 255, 255);
     margin-top: 10px;
 }
 
@@ -76,3 +76,13 @@ button:hover {
     color: #ffff;
     text-decoration: none;
 }
+
+#entrar{
+    text-decoration: none;
+    color: #312e2e;
+  }
+
+
+  #entrar:hover{
+    color: #ffff;
+  }

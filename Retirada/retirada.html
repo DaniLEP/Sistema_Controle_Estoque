@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main class="content">
+        <h1>Retirada de Produtos do Estoque</h1>
+        <form id="retiradaForm" onsubmit="processarRetirada(event)">
+            <div class="form-group">
+                <label for="tipoProduto">Tipo de Produto</label>
+                <select id="tipoProduto" name="tipoProduto" required>
+                    <option value="">Selecione o tipo de produto</option>
+                    <option value="proteina">Proteína</option>
+                    <option value="mantimento">Mantimento</option>
+                    <option value="hortalica">Hortaliça</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="quantidade">Quantidade</label>
+                <input type="number" id="quantidade" name="quantidade" min="1" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Confirmar Retirada</button>
+                <button type="button" onclick="cancelarRetirada()">Cancelar</button>
+            </div>
+        </form>
+        <div id="mensagem"></div>
+    </main>
+    
+    
+</body>
+</html>

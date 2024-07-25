@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Application Kitchen</title>
+    <title>Sistema de Controle/Estoque</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
@@ -18,17 +18,30 @@
                 <li><a href="../Cadastro_Ref_Servidas/cadastro_refeições_servidas.html">Cadastro de Refeições</a></li>
                 <li><a href="#">Manutenção Cozinha</a></li>
                 <li><a href="../Relatorios/relatorios.html">Relatórios</a></li>
-                <li><a href="#">Retiradas</a></li>
+                <li><a href="../Retirada/retirada.html">Retiradas</a></li>
             </ul>
         </div>
         <div class="navbar-user">
             <a href="../Perfil_User/perfiluser.html" class="user-menu"><img src="../img/user-png-icon-user-2-icon-png-file-512x512-pixel-512.png" id="img-user"/></a>
         </div>
-        <div class="hamburger-menu" onclick="toggleMenu()">
-            <div class="bar"></div>
-            <div class="bar"></div>
-            <div class="bar"></div>
-        </div>
+
+            <nav id="nav">
+              <button aria-label="Abrir Menu" id="btn-mobile" aria-haspopup="true" aria-controls="menu" aria-expanded="false">
+                <span id="hamburger"></span>
+              </button>
+              <ul id="menu" role="menu">
+                <li><a href="../Cadastro/cadastro.html">Cadastrar Compras</a></li>
+                <li><a href="../Cadastro_Ref_Servidas/cadastro_refeições_servidas.html">Cadastro de Refeições</a></li>
+                <li><a href="#">Manutenção Cozinha</a></li>
+                <li><a href="../Relatorios/relatorios.html">Relatórios</a></li>
+                <li><a href="../Retirada/retirada.html">Retiradas</a></li>
+                <div class="navbar-user">
+                    <a href="../Perfil_User/perfiluser.html" class="user-menu"><img src="../img/user-png-icon-user-2-icon-png-file-512x512-pixel-512.png" id="img-user"/></a>
+                </div>
+            </ul>
+
+
+            </nav>
     </div>
 </nav>
 
