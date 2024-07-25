@@ -34,7 +34,7 @@ body {
   
   .search-form button {
     padding: 8px 16px;
-    background-color: #007bff;
+    background-color: #F20DE7;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -52,7 +52,7 @@ body {
 
   
   .search-form button:hover {
-    background-color: #0056b3;
+    background-color: #F20DE7;
   }
   
   .buttons {
@@ -63,9 +63,57 @@ body {
 
 
   button {
-    padding: 13px 20px;
+    padding: 10px 20px;
     margin-right: 10px;
-    margin-top: 13px;
+    border: none;
+    background-color: #adb1b5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #F20DE7;
+    color: #fffcfc;
+  }
+  
+
+#voltar{
+  text-decoration: none;
+  color: #ffff
+  ;
+}
+
+  @media (max-width: 640px) {
+    .container {
+      max-width: 432px;
+      margin: 144px auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  } 
+  button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    background-color: #adb1b5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #F20DE7;
+    color: #fffcfc;
+  }
+  
+  #consultar {
+    padding: 14px 7px;
+    margin-right: -7px;
+    margin-top: -2px;
     border: none;
     background-color: #007bff;
     color: #fff;
@@ -73,12 +121,5 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-#voltar{
-  text-decoration: none;
-  color: #ffff
-  ;
-}
 
-  button:hover {
-    background-color: #0056b3;
-  }
+}

@@ -9,5 +9,7 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
  
     } else {    
         document.getElementById('error-msg').textContent = 'Login ou Senha inválidos';
+        window.location = "../Home/home.html"; 
+
     }
 });

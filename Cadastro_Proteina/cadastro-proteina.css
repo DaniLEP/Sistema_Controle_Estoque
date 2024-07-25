@@ -47,7 +47,7 @@ button {
   padding: 10px 20px;
   margin-right: 10px;
   border: none;
-  background-color: #007bff;
+  background-color: #adb1b5;
   color: #fff;
   border-radius: 4px;
   cursor: pointer;
@@ -55,7 +55,8 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #F20DE7;
+  color: #fffcfc;
 }
 
 #voltar{
@@ -69,3 +70,17 @@ button:hover {
   height: 100px;
 }
 
+  @media (max-width: 640px){
+    h1 {
+      text-align: right;
+      margin-bottom: 7px;
+      margin-top: -28%;
+      font-size: 47px;
+  }
+
+
+    #proteinas {
+     width: 141px;
+     height: 114px;
+    }
+}

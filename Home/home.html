@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema de Controle/Estoque</title>
+    <title>Insitituto Reciclar</title>
     <link rel="stylesheet" href="home.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
 <!-- Barra de navegação -->
 <nav class="navbar">
     <div class="container">
-        <div class="navbar-logo"><img src="../img/Logo Reciclar - Negativo.png" width="205px" height="86px"></div>
+        <div class="navbar-logo"><img src="../img/Reciclar_Logo_Monocromatico_Horizontal_Negativo.png" alt="Logo-Instituto-Reciclar" width="215px" height="90px"></div>
         <div class="navbar-menu" id="navbarMenu">
             <ul class="navbar-nav">
                 <li><a href="../Cadastro/cadastro.html">Cadastrar Compras</a></li>
@@ -35,9 +35,7 @@
                 <li><a href="#">Manutenção Cozinha</a></li>
                 <li><a href="../Relatorios/relatorios.html">Relatórios</a></li>
                 <li><a href="../Retirada/retirada.html">Retiradas</a></li>
-                <div class="navbar-user">
-                    <a href="../Perfil_User/perfiluser.html" class="user-menu"><img src="../img/user-png-icon-user-2-icon-png-file-512x512-pixel-512.png" id="img-user"/></a>
-                </div>
+                <li><a href="../Perfil_User/perfiluser.html">Meu Perfil</a></li>
             </ul>
 
 
@@ -49,43 +47,48 @@
 <div class="carousel-container">
     <div class="carousel">
         <div class="carousel-item" id="relatorio-proteina">
+            <br><br><br>
             <h2>Relatório de Proteínas</h2>
             <div id="relatorioProteina"></div>
-            <button onclick="editarRelatorio('proteina')">Editar</button>
-            <button onclick="salvarPDF('proteina')">Salvar em PDF</button>
-            <button onclick="salvarExcel('proteina')">Salvar em Excel</button>
+            <button id="PDF" onclick="editarRelatorio('proteina')">Editar</button>
+            <button id="PDF" onclick="salvarPDF('proteina')">Salvar em PDF</button>
+            <button id="PDF" onclick="salvarExcel('proteina')">Salvar em Excel</button>
         </div>
         <div class="carousel-item" id="relatorio-mantimento">
+            <br><br><br>
             <h2>Relatório de Mantimentos</h2>
             <div id="relatorioMantimento"></div>
-            <button onclick="editarRelatorio('mantimento')">Editar</button>
-            <button onclick="salvarPDF('mantimento')">Salvar em PDF</button>
-            <button onclick="salvarExcel('mantimento')">Salvar em Excel</button>
+            <button id="PDF" onclick="editarRelatorio('mantimento')">Editar</button>
+            <button id="PDF" onclick="salvarPDF('mantimento')">Salvar em PDF</button>
+            <button id="PDF" onclick="salvarExcel('mantimento')">Salvar em Excel</button>
         </div>
         <div class="carousel-item" id="relatorio-hortalica">
+            <br><br><br>
             <h2>Relatório de Hortaliças</h2>
             <div id="relatorioHortalica"></div>
-            <button onclick="editarRelatorio('hortalica')">Editar</button>
-            <button onclick="salvarPDF('hortalica')">Salvar em PDF</button>
-            <button onclick="salvarExcel('hortalica')">Salvar em Excel</button>
+            <button id="PDF" onclick="editarRelatorio('hortalica')">Editar</button>
+            <button id="PDF" onclick="salvarPDF('hortalica')">Salvar em PDF</button>
+            <button id="PDF" onclick="salvarExcel('hortalica')">Salvar em Excel</button>
         </div>
         <div class="carousel-item" id="relatorio-doacoes">
+            <br><br><br>
             <h2>Relatório de Doações Recebidas</h2>
             <div id="relatorioDoacoes"></div>
-            <button onclick="editarRelatorio('doacoes')">Editar</button>
-            <button onclick="salvarPDF('doacoes')">Salvar em PDF</button>
-            <button onclick="salvarExcel('doacoes')">Salvar em Excel</button>
+            <button id="PDF" onclick="editarRelatorio('doacoes')">Editar</button>
+            <button id="PDF" onclick="salvarPDF('doacoes')">Salvar em PDF</button>
+            <button id="PDF" onclick="salvarExcel('doacoes')">Salvar em Excel</button>
         </div>
         <div class="carousel-item" id="relatorio-refeicoes">
+            <br><br><br>
             <h2>Relatório de Refeições Servidas</h2>
             <div id="relatorioRefeicoes"></div>
-            <button onclick="editarRelatorio('refeicoes')">Editar</button>
-            <button onclick="salvarPDF('refeicoes')">Salvar em PDF</button>
-            <button onclick="salvarExcel('refeicoes')">Salvar em Excel</button>
+            <button id="PDF" onclick="editarRelatorio('refeicoes')">Editar</button>
+            <button id="PDF" onclick="salvarPDF('refeicoes')">Salvar em PDF</button>
+            <button id="PDF" onclick="salvarExcel('refeicoes')">Salvar em Excel</button>
         </div>
     </div>
-    <button class="carousel-button prev" onclick="prevItem()">&#10094;</button>
-    <button class="carousel-button next" onclick="nextItem()">&#10095;</button>
+    <button class="carousel-button prev" onclick="prevItem()">&#10096;</button>
+    <button class="carousel-button next" onclick="nextItem()">&#10097;</button>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>

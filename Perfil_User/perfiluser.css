@@ -51,13 +51,13 @@ button {
 }
 
 button[type="button"] {
-    background-color: #007bff;
-    color: white;
+    background-color: #F20DE7;
+    color: #fffcfc;
 }
 
 button[type="submit"] {
-    background-color: #007bff;
-    color: white;
+    background-color: #F20DE7;
+    color: #fffcfc;
 }
 
 button:disabled {
