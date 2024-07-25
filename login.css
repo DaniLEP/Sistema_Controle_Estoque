@@ -9,7 +9,7 @@ body {
 }
 
 .login-container {
-    background-color: #3179cc;
+    background-color: #00009C;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
@@ -57,7 +57,7 @@ button {
     transition: background-color 0.3s;
 }
 button:hover {
-    background-color: #174479;
+    background-color: #225a9b;
     color: #f4f4f4;
 }
 

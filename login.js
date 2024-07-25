@@ -4,10 +4,10 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     var password = document.getElementById('password').value;
 
 
-    if (username === 'Danilo' && password === '123') {
-        window.location = "./home.html"
+    if (username === 'Admin' && password === 'Reciclar') {
+        window.location = "../Home/home.html"
  
     } else {    
-        document.getElementById('error-msg').textContent = 'E-mail ou Senha inválidos';
+        document.getElementById('error-msg').textContent = 'Login ou Senha inválidos';
     }
 });
