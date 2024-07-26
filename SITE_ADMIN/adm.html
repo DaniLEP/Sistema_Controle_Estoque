@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel do Administrador</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="caminho/para/seu/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="admin-container">
+        <nav class="sidebar">
+            <div class="sidebar-logo">
+                <img src="../img/Reciclar_Logo_Monocromatico_Horizontal_Negativo.png" alt="Logo">
+            </div>
+            <ul class="sidebar-nav">
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#usuarios">Gerenciar Usuários</a></li>
+                <li><a href="#produtos">Gerenciar Produtos</a></li>
+                <li><a href="#relatorios">Relatórios</a></li>
+                <li><a href="#configuracoes">Configurações</a></li>
+                <li><a href="#logout">Sair</a></li>
+            </ul>
+        </nav>
+        <div class="main-content">
+            <header class="admin-header">
+                <h1>Painel do Administrador</h1>
+            </header>
+            <div class="content" id="content">
+                <section id="dashboard">
+                    <h2>Dashboard</h2>
+                    <p>Bem-vindo ao painel de administração.</p>
+                </section>
+                <section id="usuarios">
+                    <h2>Gerenciar Usuários</h2>
+                    <p>Aqui você pode gerenciar usuários.</p>
+                </section>
+                <section id="produtos">
+                    <h2>Gerenciar Produtos</h2>
+                    <p>Aqui você pode gerenciar produtos.</p>
+                </section>
+                <section id="relatorios">
+                    <h2>Relatórios</h2>
+                    <p>Aqui você pode visualizar relatórios.</p>
+                </section>
+                <section id="configuracoes">
+                    <h2>Configurações</h2>
+                    <p>Aqui você pode ajustar configurações do sistema.</p>
+                </section>
+                <section id="logout">
+                    <h2>Sair</h2>
+                    <p>Você saiu do sistema.</p>
+                </section>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.sidebar-nav a');
+    const sections = document.querySelectorAll('section');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault();
+            const targetId = link.getAttribute('href').substring(1);
+
+            sections.forEach(section => {
+                if (section.id === targetId) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        });
+    });
+
+    // Mostrar o dashboard por padrão
+    document.getElementById('dashboard').classList.add('active');
+});
+
+    </script>
+</body>
+</html>

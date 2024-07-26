@@ -115,11 +115,16 @@ body {
     margin-right: -7px;
     margin-top: -2px;
     border: none;
-    background-color: #007bff;
+    background-color: #adb1b5;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+}
+
+#consultar:hover {
+  background-color: #F20DE7;
+  color: #fffcfc;
 }
 
 }
