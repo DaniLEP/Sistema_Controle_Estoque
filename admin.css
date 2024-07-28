@@ -1,0 +1,174 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    background: #f4f4f4;
+}
+
+.admin-container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 250px;
+    background: #333;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sidebar-logo img {
+    display: block;
+    margin: 20px auto;
+    width: 220px;
+}
+
+.sidebar-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-nav li {
+    width: 100%;
+}
+
+.sidebar-nav li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.sidebar-nav li a:hover {
+    background: #444;
+}
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.admin-header {
+    background: #007bff;
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.content {
+    margin-top: 20px;
+}
+
+section {
+    display: none;
+}
+
+section.active {
+    display: block;
+} */
+
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+header {
+    background-color: #f519ea;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+
+#reciclar {
+    width: 34vh;
+    margin-top: 29vh;
+    height: 17vh;
+    margin-right: 4%;
+}
+
+.sidebar {
+    background-color: #00009C;
+    color: white;
+    width: 276px;
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 1rem;
+    border-bottom: 1px solid #444;
+}
+
+.sidebar ul li:hover {
+    background-color: #e7e4e4;
+    color: #f519ea;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+
+.sidebar a:hover {
+    color: #f519ea;
+}
+
+.content {
+    margin-left: 250px;
+    padding: 1rem;
+    padding-top: 80px;
+    width: 100%;
+}
+
+.overview {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    text-align: center;
+    width: 30%;
+}
+
+.card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.card p {
+    font-size: 1.5rem;
+    color: #4CAF50;
+}
+

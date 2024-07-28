@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings</title>
+    <link rel="stylesheet" href="logout.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Settings</h1>
+            <nav>
+                <ul>
+                    <li><a href="../Dashboard/dashboard.html">Painel</a></li>
+                    <li><a href="../Settings/settings.html">Settings</a></li>
+                    <li><a href="../Login/login.html" id="logoutLink">Sair</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="content">
+            <section class="section">
+                <h2>Change Password</h2>
+                <form id="changePasswordForm">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" name="currentPassword" required>
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" name="newPassword" required>
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <button type="submit">Change Password</button>
+                </form>
+            </section>
+            <section class="section">
+                <h2>Manage User Permissions</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>User ID</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userPermissionsTable">
+                        <!-- Rows will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </section>
+            <section class="section">
+                <h2>General Settings</h2>
+                <form id="generalSettingsForm">
+                    <label for="siteName">Site Name</label>
+                    <input type="text" id="siteName" name="siteName" value="My Website" required>
+                    <label for="adminEmail">Admin Email</label>
+                    <input type="email" id="adminEmail" name="adminEmail" value="admin@example.com" required>
+                    <button type="submit">Save Settings</button>
+                </form>
+            </section>
+        </main>
+    </div>
+    <script src="logout.js"></script>
+</body>
+</html>

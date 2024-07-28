@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Incluir biblioteca de gráficos Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Dashboard</h1>
+            <nav>
+                <ul>
+                    <li><a href="../Settings/settings.html">Settings</a></li>
+                    <li><a href="../adm.html">Return</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="content">
+            <section class="stats">
+                <div class="stat">
+                    <h2>Total Users</h2>
+                    <p id="totalUsers">150</p>
+                </div>
+                <div class="stat">
+                    <h2>Active Users</h2>
+                    <p id="activeUsers">120</p>
+                </div>
+                <div class="stat">
+                    <h2>Inactive Users</h2>
+                    <p id="inactiveUsers">30</p>
+                </div>
+            </section>
+            <section class="charts">
+                <div class="chart-container">
+                    <canvas id="userChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <canvas id="activityChart"></canvas>
+                </div>
+            </section>
+            <section class="recent-activities">
+                <h2>Recent Activities</h2>
+                <ul id="activityList">
+                    <li>User <strong>user1</strong> logged in</li>
+                    <li>User <strong>user2</strong> updated profile</li>
+                    <li>User <strong>user3</strong> created a post</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

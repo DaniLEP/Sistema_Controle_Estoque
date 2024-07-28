@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="create_users.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Admin Dashboard</h1>
+        </header>
+        <main class="content">
+            <button id="openModalButton">Create New User</button>
+            <!-- Modal -->
+            <div id="userModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <h2>Crie um novo usuário</h2>
+                    <form id="createUserForm">
+                        <label for="username">Nome:</label>
+                        <input type="text" id="username" name="username" required>
+                        
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="password">Senha:</label>
+                        <input type="password" id="password" name="password" required>
+                        
+                        <label for="confirmPassword">Confirme a senha:</label>
+                        <input type="password" id="confirmPassword" name="confirmPassword" required>
+                        
+                        <label for="role">Opções de Usuário:</label>
+                        <select id="role" name="role" required>
+                            <option value="admin">Admin</option>
+                            <option value="editor">Editor</option>
+                            <option value="viewer">Viewer</option>
+                        </select>
+                        
+                        <button type="submit">Criar Usuário</button>
+                    </form>
+                </div>
+            </div>  
+        </main>
+    </div>
+    <script src="create_users.js"></script>
+</body>
+</html>

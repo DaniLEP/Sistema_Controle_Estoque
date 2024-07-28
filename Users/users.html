@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Status do Usuário</title>
+    <link rel="stylesheet" href="users.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Painel de Status do Usuário</h1>
+            <nav>
+                <ul>
+                    <li><a href="../adm.html">Voltar</a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="content">
+            <section class="summary">
+                <h2>Status</h2>
+                <div class="card">
+                    <h3>Total de Usuários Logados</h3>
+                    <p id="totalUsers">0</p>
+                </div>
+                <div class="card">
+                    <h3>Usuários Ativo</h3>
+                    <p id="activeUsers">0</p>
+                </div>
+                <div class="card">
+                    <h3>Usuários Inativos</h3>
+                    <p id="inactiveUsers">0</p>
+                </div>
+            </section>
+            <section class="user-table">
+                <h2>Lista de Usuários</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Username</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody id="userTableBody">
+                        <!-- Rows will be inserted here dynamically -->
+                    </tbody>
+                </table>
+            </section>
+        </main>
+        <h2>Create new user</h2>
+        <button type="button">
+        <a href="./Create_Users/create_user.html">
+            <img src="./img/mais.png">
+        </a>    
+    </button>
+    </div>
+    <script src="users.js"></script>
+</body>
+</html>
