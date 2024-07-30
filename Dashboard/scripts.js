@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Logout Functionality
     document.getElementById('logoutLink').addEventListener('click', function(event) {
         event.preventDefault();
-        window.location.href = 'login.html'; // Redirecionar para a página de login
+        window.location.href = '../Login/login.html'; // Redirecionar para a página de login
     });
 
     // Gráfico de Usuários
@@ -37,7 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const activityChart = new Chart(activityCtx, {
         type: 'line',
         data: {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: ['January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'],
             datasets: [{
                 label: 'Activity',
                 data: [65, 59, 80, 81, 56, 55, 40],

@@ -97,26 +97,83 @@ header {
     top: 0;
 }
 
-#reciclar {
-    width: 34vh;
-    margin-top: 29vh;
-    height: 17vh;
-    margin-right: 4%;
+/*  Imagem 
+.image-container {
+    position: relative;
+    width: 324px;
+    height: 162px;
+    overflow: hidden;
+    margin-top: 72vh;
 }
+
+/* Sobreposição 
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+Efeito de sobreposição ao passar o mouse 
+.image-container:hover .overlay {
+    opacity: 1;
+}
+*/
+
+/* Container da imagem */
+.image-container {
+    position: relative;
+    width: 300px; /* Ajuste conforme necessário */
+    /* height: 200px; Ajuste conforme necessário */
+}
+
+/* Imagem */
+.image-container img {
+    width: 291px;
+    height: 101px;
+    overflow: hidden;
+    margin-top: 72vh;
+    margin: 4vh;
+    position: static;
+    margin-top: 1vh;
+}
+
+/* Sobreposição */
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Cor e opacidade do overlay */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Efeito de sobreposição ao passar o mouse */
+/* .image-container:hover .overlay {
+    opacity: 1;
+} */
 
 .sidebar {
     background-color: #00009C;
     color: white;
-    width: 276px;
+    width: 249px;
     padding-top: 60px;
     position: fixed;
     top: 0;
     bottom: 0;
+    right: 0vh;
 }
 
 .sidebar ul {
     list-style: none;
     padding: 0;
+    margin-top: 0vh;
+    text-align: right;
 }
 
 .sidebar ul li {
@@ -127,6 +184,18 @@ header {
 .sidebar ul li:hover {
     background-color: #e7e4e4;
     color: #f519ea;
+}
+
+
+#icone {
+    width: 31px;
+    height: 32px;
+    margin-right: 22px;
+    margin-bottom: -5px;
+}
+
+#icone:hover{
+    background-color: black;
 }
 
 .sidebar ul li a {

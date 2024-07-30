@@ -206,3 +206,12 @@ form button:hover {
     text-decoration: none;
     color: #ffff;
   }
+
+
+ a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-right: -172vh;
+}
+

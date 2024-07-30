@@ -10,7 +10,7 @@ body {
 }
 
 header {
-    background-color: #4CAF50;
+    background-color: #00009C;
     color: white;
     padding: 1rem;
     text-align: center;
@@ -62,7 +62,7 @@ nav ul li a:hover {
 
 .stat h2 {
     margin-bottom: 0.5rem;
-    color: #4CAF50;
+    color: #f519ea;
 }
 
 .charts {
@@ -93,7 +93,7 @@ nav ul li a:hover {
 
 .recent-activities h2 {
     margin-bottom: 1rem;
-    color: #4CAF50;
+    color: #f519ea;
 }
 
 .recent-activities ul {

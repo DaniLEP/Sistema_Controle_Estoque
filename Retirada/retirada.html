@@ -1,15 +1,43 @@
-<h1>PAGINA NÃO EXISTENTE!</h1>
-<p>Aguardando o desenvolvimento<br>
-    @danilo santos manzoli 
-</p>
-<style>
-    h1{
-        text-align: center;
-        font-size: 50px;
-    }
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirada</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Retirada</h1>
+<div class="container">
+    <div class="search-container">
+        <input type="text" id="skuInput" placeholder="Consultar por SKU">
+        <select id="tipoInput">
+            <option value="">Selecionar Tipo</option>
+            <option value="proteina">Proteína</option>
+            <option value="mantimento">Mantimento</option>
+            <option value="hortalica">Hortaliça</option>
+            <option value="doacoes">Doações Recebidas</option>
+            <option value="refeicoes">Refeições Servidas</option>
+        </select>
+        <button id="consultarBtn" onclick="consultarEstoque()" disabled>Consultar</button>
+    </div>
 
-    p{
-        text-align: center;
-        font-size: 50px;
-    }
-</style>
+    <div class="retirada-container">
+        <input type="number" id="quantidadeRetirada" placeholder="Quantidade a retirar">
+        <button onclick="retirarProduto()">Retirar Produto</button>
+    </div>
+
+    <div id="resultadoConsulta"></div>
+
+    <div class="action-buttons">
+        <button type="button" onclick="voltar()"><a href="../Home/home.html " id="voltar">Voltar</a></button>
+        <button onclick="salvarExcel()">Salvar em Excel</button>
+        <button onclick="salvarPDF()">Salvar em PDF</button>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.1/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+<script src="controle.js"></script>
+</body>
+</html>

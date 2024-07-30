@@ -101,7 +101,7 @@ body {
 #PDF {
     padding: 13px 20px;
     margin-right: 10px;
-    margin-top: 56vh;
+    margin-top: 52vh;
     border: none;
     background-color: #e9e9ef;
     color: #afabab;
@@ -130,9 +130,9 @@ body {
     padding: 2px;
     background-color: #d9d1d1;
     text-align: center;
-    height: 83vh;
+    height: 81vh;
+    position: relative;
 }
-
 .carousel-button {
     position: absolute;
     top: 50%;
