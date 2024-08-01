@@ -181,14 +181,15 @@ form input, form select {
 form button {
     padding: 0.7rem;
     background-color: #fafafa;
-    color: white;
+    color: black;
     border: none;
     border-radius: 4px;
     cursor: pointer;
 }
 
 form button:hover {
-    background-color: #00009C;;
+    background-color: #00009C;
+    color: white;
 }
 
 
@@ -215,3 +216,11 @@ form button:hover {
     margin-right: -172vh;
 }
 
+@media (max-width: 640px) {
+    a {
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        margin-right: -44vh;
+    }
+}

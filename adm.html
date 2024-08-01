@@ -3,31 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>Administrador</title>
+    <link rel="icon" href="./img/definicoes.png" type="image/png">
     <link rel="stylesheet" href="admin.css">
+     <!-- <style>  /* 
+        /* Estilos adicionais para o menu toggle */
+        /* .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+            background-color: #f519ea;
+            color: white;
+            text-align: center;
+        }
+
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: #fff;
+            margin: 4px 0;
+            transition: 0.4s;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 200px;
+                height: 100%;
+                background-color: #333;
+                z-index: 1000;
+            }
+
+            .sidebar ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .sidebar ul li {
+                margin: 0;
+            }
+
+            .sidebar ul li a {
+                display: block;
+                padding: 10px;
+                color: white;
+                text-decoration: none;
+            }
+
+            .sidebar ul li a img {
+                vertical-align: middle;
+                margin-right: 10px;
+            }
+
+            .hamburger-menu {
+                display: block;
+            }
+        }
+    </style> */ -->
 </head>
 <body>
 
     <div class="container">
-        <header>
-            <h1>Admin Dashboard</h1>
-        </header>
+        <header> <h1>Admin Dashboard</h1></header>
         <nav class="sidebar">
             <ul>
-                <li><a href="./Home/home.html"><img src="./img/botao-home.png" alt="" srcset="" id="icone">Home</a></li>
+                <li><a href="./Home/home.html" target="_blank"><img src="./img/botao-home.png" alt="" srcset="" id="icone" lang="en">Home</a></li>
                 <li><a href="./Users/users.html"><img src="./img/icons8-usuário-48 (1).png" id="icone">Users</a></li>
-                <li><a href="./Settings/settings.html"><img src="./img/configuracoes.png" alt="" id="icone">Settings</a></li>
-                <li><a href="./Relatorios/relatorios.html" target="_blank"><img src="./img/resports.png" alt="" id="icone">Reports</a></li>
-                <li><a href="./Dashboard/dashboard.html"><img src="./img/painel.png" alt="" id="icone">Dashboard</a></li>
+                <li><a href="./Settings/settings.html"><img src="./img/configuracao.png" alt="" id="icone">Settings</a></li>
+                <li><a href="./Relatorios/relatorios.html" target="_blank"><img src="./img/relatorio.png" alt="" id="icone">Reports</a></li>
+                <li><a href="./Dashboard/dashboard.html"><img src="./img/dashboard.png" alt="" id="icone">Dashboard</a></li>
                 <li><a href="./Login/login.html"><img src="./img/botao-de-logout-delineado.png" alt="" id="icone">Logout</a></li>
             </ul>
         </nav>
         <div class="image-container">
-        <img src="./img/Reciclar_Logo_Monocromatico_Horizontal_Negativo.png" id="reciclar" alt="Logo-Instituto-Reciclar">
-            <!-- <div class="overlay"></div> -->
+            <img src="./img/Reciclar-Logo adm(1).png" id="reciclar" alt="Logo-Instituto-Reciclar">
         </div>
-
     </div>
-
 </body>
 </html>

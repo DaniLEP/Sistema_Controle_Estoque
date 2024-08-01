@@ -97,6 +97,9 @@ header {
     top: 0;
 }
 
+header h1{
+    display: block;
+}
 /*  Imagem 
 .image-container {
     position: relative;
@@ -241,3 +244,72 @@ Efeito de sobreposição ao passar o mouse
     color: #4CAF50;
 }
 
+
+
+/* Responsivo */
+
+@media (max-width: 640px) {
+    .sidebar {
+        background-color: #00009C;
+        color: white;
+        width: 162px;
+        padding-top: 60px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0vh;
+    }
+    
+    .sidebar ul {
+        width: 162px;
+        list-style: none;
+        padding: 0;
+        margin-top: 0vh;
+        text-align: right;
+    }
+    
+    .sidebar ul li {
+        padding: 1rem;
+        border-bottom: 1px solid #444;
+    }
+    
+    .sidebar ul li:hover {
+        background-color: #e7e4e4;
+        color: #f519ea;
+    }
+    
+    #icone {
+        width: 22px;
+        height: 23px;
+        margin-right: 8px;
+        margin-bottom: -5px;
+    }
+
+    .image-container img {
+        width: 47vh;
+        height: 17vh;
+        overflow: hidden;
+        margin: 4vh;
+        position: static;
+        margin-top: 1vh;
+    }
+
+    header {
+        background-color: #f519ea;
+        padding: 4rem;
+        text-align: center;
+        width: 100%;
+        position: fixed;
+        top: 0;
+    }
+
+    header h1{
+        display: none;
+    }
+
+    body{
+        overflow-y: hidden;
+    }
+
+
+}

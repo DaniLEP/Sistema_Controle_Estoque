@@ -110,3 +110,27 @@ nav ul li a:hover {
     text-decoration: none;
     color: #ffff;
   } */
+
+
+  @media (max-width: 640px) {
+    .card {
+        background-color: #f1f1f1;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        text-align: center;
+        width: 26%;
+        margin-top: 6vh;
+    }
+
+    h2 {
+        text-decoration: none;
+        color: black;
+        margin-top: -2vh;
+        margin-right: -11vh;
+    }
+    
+    body{
+        overflow-x: hidden;
+    }
+}
