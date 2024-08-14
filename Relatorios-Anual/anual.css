@@ -1,4 +1,4 @@
-body {
+/* body {
     font-family: Arial, sans-serif;
     background-color: #00009C;
     margin: 0;
@@ -127,4 +127,109 @@ body {
   color: #fffcfc;
 }
 
+} */
+
+/* styles.css */
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #00009C;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.container {
+  width: 57%;
+  margin: auto;
+  padding: 1px;
+  margin-top: 13vh;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.form-container label {
+  flex-basis: 100%;
+  margin-top: 10px;
+}
+
+.form-container input,
+.form-container select,
+.form-container button {
+  flex-basis: 102%;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+button, .form-container{
+  padding: 10px 20px;
+  margin-right: 10px;
+  border: none;
+  color: #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+.form-container button, #voltar:hover {
+  background-color: #F20DE7;
+  color: #fff;
+  margin-right: -1vh;
+}
+
+button, #voltar{
+text-decoration: none;
+color: #000000;
+}
+
+button:disabled {
+  background-color: #9e8f8f;
+  cursor: not-allowed;
+  margin-right: -1vh;
+}
+
+
+fieldset {
+  margin-left: 7vh;
+  border: none;
+  margin-top: 10px;
+}
+
+fieldset legend {
+  font-weight: bold;
+}
+
+#result-container {
+  margin-top: 20px;
+}
+
+.charts {
+  display: flex;
+  justify-content: center;
+  margin-top: 10vh;
+  box-sizing: border-box;
+  height: 68vh;
+  width: 63vh;
+  margin-left: 28vh;
+}
+
+.charts canvas {
+  width: 400px;
+  height: 400px;
 }

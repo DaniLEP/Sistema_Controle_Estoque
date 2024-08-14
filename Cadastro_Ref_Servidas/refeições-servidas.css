@@ -66,6 +66,37 @@
   }
   
   
+.search-container {
+  text-align: center;
+  margin: 20px;
+}
+
+.search-container input {
+  width: calc(84% - 191px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-container select {
+  width: calc(128% - 420px);
+  padding: 7px;
+  margin-bottom: 0px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #716c6c;
+  margin-left: -48vh;
+}
+
+.search-container  {
+  padding: 10px;
+  margin: 5px;
+}
+
+  
   #voltar{
     text-decoration: none;
     color: #ffff

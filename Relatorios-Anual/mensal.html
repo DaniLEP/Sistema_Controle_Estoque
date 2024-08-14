@@ -5,18 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório Mensal/Anual</title>
     <link rel="stylesheet" href="anual.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script> -->
 </head>
 <body>
-    <div class="container">
-    <input type="text" id="skuInput" placeholder="Digite o SKU">
-    <button id="consultar" onclick="consultarPorSKU()">Consultar</button>
-    <div id="relatorio"></div>
-    <button id="salvarExcelBtn" onclick="salvarExcel()" disabled>Salvar em Excel</button>
-    <button id="salvarPdfBtn" onclick="salvarPDF()" disabled>Salvar em PDF</button>
-    <button type="button" onclick="voltar()"><a href="../Relatorios/relatorios.html" id="voltar">Voltar</a></button>
-</div>
+    <body>
+        <div class="container">
+            <h1>Relatório Mensal/Anual</h1>
+            
+            <div class="form-container">
+                <label for="start-date">Escolha uma data:</label>
+                <input type="date" id="start-date">
+    
+                <label for="end-date">Até a Data:</label>
+                <input type="date" id="end-date">
+    
+                <label for="report-type">Tipo de Relatório:</label>
+                <select id="report-type">
+                    <option value="" disabled selected>Selecione o tipo de relatório</option>
+                    <option value="mensal">Mensal</option>
+                    <option value="anual">Anual</option>
+                </select>
+    
+                <fieldset>
+                    <legend>Tipo de Alimento:</legend>
+                    <label><input type="checkbox" class="food-type" value="proteina"> Proteína</label>
+                    <label><input type="checkbox" class="food-type" value="mantimento"> Mantimento</label>
+                    <label><input type="checkbox" class="food-type" value="hortalicas"> Hortaliças</label>
+                    <label><input type="checkbox" class="food-type" value="doacoesRecebidas"> Doações Recebidas</label>
+                    <label><input type="checkbox" class="food-type" value="servidas"> Refeições Servidas</label>
+                </fieldset>
+    
+                <button id="search-btn" disabled>Consultar</button>
+                <button type="button" onclick="voltar()"><a href="../Relatorios/relatorios.html" id="voltar">Voltar</a></button>
+
+            </div>
+    
+            <div id="result-container" style="display:none;">
+                <!-- Gráficos serão exibidos aqui -->
+                <div class="charts">
+                    <canvas id="pie-chart"></canvas>
+                </div>
+            </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </div>
     <script src="mensal.js"></script>
 </body>
 </html>
+

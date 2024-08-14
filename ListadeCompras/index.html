@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Seleção de Produtos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de Seleção de Produtos</h1>
+        <div class="input-container">
+            <input type="text" id="product-input" placeholder="Nome do Produto" required>
+            <input type="number" id="quantity-input" placeholder="Quantidade" min="1" value="1">
+            <button id="add-product-btn">Adicionar Produto</button>
+        </div>
+
+        <ul id="product-list">
+            <!-- Produtos serão listados aqui -->
+            <li>
+                <label>
+                    <input type="checkbox" class="product-checkbox"> Macarrão
+                </label>
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remover</button>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" class="product-checkbox"> Feijão
+                </label>
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remover</button>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" class="product-checkbox"> Arroz
+                </label>
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remover</button>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" class="product-checkbox"> Leite Condensado 395g
+                </label>
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remover</button>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" class="product-checkbox"> Extrato de tomate 500g
+                </label>
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remover</button>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" class="product-checkbox"> Leite 1L
+                </label>
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remover</button>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" class="product-checkbox"> Café 500g
+                </label>
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remover</button>
+            </li>
+            <li>
+                <label>
+                    <input type="checkbox" class="product-checkbox"> Leite em pó 1kg
+                </label>
+                <input type="number" class="quantity-input" value="1" min="1">
+                <button class="remove-btn">Remover</button>
+            </li>
+            <!-- Adicione mais produtos conforme necessário -->
+        </ul>
+        <button type="button" onclick="voltar()"><a href="../Home/home.html" id="voltar">Voltar</a></button>
+
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
