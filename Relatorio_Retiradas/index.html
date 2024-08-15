@@ -16,7 +16,7 @@
                 <label for="dataConsulta" class="form-label">Selecione a Data</label>
                 <input type="date" class="form-control" id="dataConsulta" required>
             </div>
-            <button type="submit" class="btn btn-primary">Consultar</button>
+            <button type="submit">Consultar</button>
         </form>
 
         <div id="resultados" class="mt-5">
@@ -41,6 +41,7 @@
                     <!-- Dados serão inseridos aqui pelo JavaScript -->
                 </tbody>
             </table>
+            <button type="button" id="return" onclick="voltar()"><a href="../Relatorios/relatorios.html"><img src="../img/return.png" id="voltar"></a></button>
             <button id="exportarPDF" class="btn btn-danger mt-3">Exportar como PDF</button>
             <button id="exportarExcel" class="btn btn-success mt-3">Exportar como Excel</button>
         </div>

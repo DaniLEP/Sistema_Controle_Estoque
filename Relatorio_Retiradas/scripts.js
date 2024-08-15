@@ -15,8 +15,9 @@ document.getElementById('consultaForm').addEventListener('submit', function(even
         { sku: 'SKU001', nome: 'Macarrão', fornecedor: 'LEVE', quantidade: 20, tipo: 'Proteína', quantidadeCadastrada: 30, quantidadeUtilizada: 10, valorGasto: 50, UnidadeMedida: 'kg', ValorUnitario: 1, data: '2024-07-15'},
         { sku: 'SKU002', nome: 'Feijão', fornecedor: 'CAMIL', quantidade: 15, tipo: 'Mantimento', quantidadeCadastrada: 20, quantidadeUtilizada: 5, valorGasto: 40, UnidadeMedida: 'kg', ValorUnitario: 1, data: '2024-01-14'},
         { sku: 'SKU003', nome: 'Arroz', fornecedor: 'CAMIL', quantidade: 25, tipo: 'Doações Recebidas', quantidadeCadastrada: 30, quantidadeUtilizada: 5, valorGasto: 60, UnidadeMedida: 'kg', ValorUnitario: 1, data: '2024-09-13'},
-        { sku: 'SKU004', nome: 'Leite Condensado', fornecedor: 'Pirancanjuba', quantidade: 12, tipo: 'Mantimento', quantidadeCadastrada: 15, quantidadeUtilizada: 3, valorGasto: 30, UnidadeMedida: 'kg', ValorUnitario: 1, data: '2024-03-14'},
-        { sku: 'SKU005', nome: 'Alface-Americano', fornecedor: 'CEAGESP', quantidade: 8, tipo: 'Hortaliça', quantidadeCadastrada: 15, quantidadeUtilizada: 3, valorGasto: 30, UnidadeMedida: 'kg', ValorUnitario: 1, data: '2024-02-14'}
+        { sku: 'SKU004', nome: 'Leite em Pó', fornecedor: 'Italac', quantidade: 25, tipo: 'Mantimento', quantidadeCadastrada: 150, quantidadeUtilizada: 50, valorGasto: 6000, UnidadeMedida: 'kg', ValorUnitario: 5.60, data: '2024-09-13'},
+        { sku: 'SKU005', nome: 'Leite Condensado', fornecedor: 'Pirancanjuba', quantidade: 12, tipo: 'Mantimento', quantidadeCadastrada: 15, quantidadeUtilizada: 3, valorGasto: 30, UnidadeMedida: 'kg', ValorUnitario: 1, data: '2024-03-14'},
+        { sku: 'SKU006', nome: 'Alface-Americano', fornecedor: 'CEAGESP', quantidade: 8, tipo: 'Hortaliça', quantidadeCadastrada: 15, quantidadeUtilizada: 3, valorGasto: 30, UnidadeMedida: 'kg', ValorUnitario: 1, data: '2024-02-14'}
         // Adicione mais dados conforme necessário
     ];
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt-BR">
     <head>
         <meta charset="UTF-8">
@@ -19,9 +19,58 @@
         <div class="button-container">
             <button id="downloadPDF">Baixar PDF</button>
             <button id="downloadExcel">Baixar Excel</button>
-            <button type="button" onclick="voltar()"><a href="../Relatorios/relatorios.html" id="voltar">Voltar</a></button>
+            <button type="button" id="return" onclick="voltar()"><a href="../Relatorios/relatorios.html"><img src="../img/return.png" id="voltar"></a></button>
         </div>
     </div>
     <script src="relatorio-mantimentos.js"></script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Mantimento</title>
+    <link rel="stylesheet" href="relatorio-mantimentos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Relatório de Mantimento</h1>
+        <form id="consultaForm">
+            <label for="dataConsulta">Selecione a Data:</label>
+            <input type="date" id="dataConsulta" name="dataConsulta" required>
+            <button type="submit">Consultar</button>
+        </form>
+        <div class="chart-container">
+            <canvas id="chartProdutos"></canvas>
+        </div>
+        <div class="button-container">
+            <button id="downloadExcel">Exportar em Excel</button>
+        </div>
+        <table id="tabelaResultados">
+            <thead>
+                <tr>
+                    <th>SKU</th>
+                    <th>Mantimento</th>
+                    <th>Fornecedor</th>
+                    <th>Quantidade</th>
+                    <th>Unidade de Medida</th>
+                    <th>Valor Total</th>
+                    <th>Valor Unitário</th>
+                    <th>Data de Cadastro</th>
+                    <th>Data de Vencimento</th>
+                    <th>Tempo de Consumo (Dias)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <button type="button" id="return" onclick="voltar()"><a href="../Relatorios/relatorios.html"><img src="../img/return.png" id="voltar"></a></button>
+    </div>
+    <script src="relatorio-mantimentos.js"></script>
+</body>
 </html>
+

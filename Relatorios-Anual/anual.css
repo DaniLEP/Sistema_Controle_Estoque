@@ -187,13 +187,13 @@ button, .form-container{
 }
 
 
-.form-container button, #voltar:hover {
+.form-container button:hover {
   background-color: #F20DE7;
   color: #fff;
   margin-right: -1vh;
 }
 
-button, #voltar{
+button{
 text-decoration: none;
 color: #000000;
 }
@@ -232,4 +232,24 @@ fieldset legend {
 .charts canvas {
   width: 400px;
   height: 400px;
+}
+
+
+#voltar{
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+}
+
+#return {
+  padding: 0px 0px;
+  right: 47vh;
+  position: absolute;
+  border: none;
+  background-color: #ffffff;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  top: 15vh;
 }

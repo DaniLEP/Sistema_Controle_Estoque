@@ -127,9 +127,21 @@ button:hover {
     color: #fffcfc;
 }
 
-  
-#voltar{
-    text-decoration: none;
-    color: #ffff
-    ;
+#voltar {
+    width: 42px;
+    height: 42px;
+    background-color: #fff;
   }
+  
+  #return {
+    padding: 0px 0px;
+    right: 71vh;
+    position: absolute;
+    border: none;
+    background-color: #ffffff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: -118vh;
+}
