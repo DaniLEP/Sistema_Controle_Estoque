@@ -143,11 +143,12 @@ button {
   }
   
   .chart-container {
-    margin: 45px 67vh;
-    text-align: center;
+    margin: 42px 54vh;
+    /* text-align: center; */
     width: 57vh;
+    position: static;
     height: 31vh;
-  }
+}
   
   table {
     width: 100%;

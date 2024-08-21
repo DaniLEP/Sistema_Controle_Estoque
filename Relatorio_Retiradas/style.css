@@ -66,15 +66,15 @@ button:hover {
 
 #return {
     padding: 0px 0px;
-    right: 28vh;
-    position: absolute;
+    right: 36vh;
+    position: fixed;
     border: none;
-    background-color: #ffffff;
+    background-color: #d1d1d1;
     color: #fff;
     border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    margin-top: -56vh;
+    margin-top: -25vh;
 }
 
 #resultado {
@@ -95,18 +95,6 @@ button:hover {
     top: 25vh;
 }
 
-#return {
-    padding: 0px 0px;
-    right: 28vh;
-    position: absolute;
-    border: none;
-    background-color: #d1d1d1;
-    color: #fff;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    margin-top: -56vh;
-}
 
 #exportarExcel {
     padding: 11px 13px;

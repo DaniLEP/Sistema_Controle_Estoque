@@ -11,10 +11,15 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;   
-    min-height: 10px;
-
+    overflow-y: hidden;
 }
 
+h2{
+    font-size: 3rem;
+    text-align: center;
+    font-family: emoji;
+    }
+    
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -125,18 +130,29 @@ body {
     transition: transform 0.5s ease;
 }
 
-.carousel-item {
-    margin-top: 0%;
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 2px;
-    background-color: #d9d1d1;
-    text-align: center;
-    height: 614px;
-    position: static;
-    /* min-height: 122vh; */
-}
 
+.navbar {
+    background-color: #00009C;
+    color: white;
+    padding: 1vh;
+}
+.carousel-control-next, .carousel-control-prev {
+    position: absolute;
+    top: -50%;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 15%;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+    background: 0 0;
+    border: 0;
+    opacity: .5;
+    transition: opacity .15s ease;
+}
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -203,6 +219,66 @@ body {
   #menu a {
     display: none;
 }
+
+/* Graficos  */
+#relatorioProteina{
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height:150vh;
+    width: 135vh;
+}
+
+#relatorioMantimento{
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height:150vh;
+    width: 135vh;
+}
+
+#relatorioHortalica{
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height:150vh;
+    width: 135vh;
+}
+
+#relatorioDoacoes{
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height:150vh;
+    width: 135vh;
+}
+
+#relatorioRefeicoes{
+    display: block;
+    box-sizing: border-box;
+    margin: 0 auto;
+    height:150vh;
+    width: 135vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Responsivo*/
